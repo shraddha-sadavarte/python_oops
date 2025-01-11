@@ -42,7 +42,7 @@ m1.price(13500)
 m1.camera(50,120)
 print(m1)'''
 
-class Employee:
+'''class Employee:
     company_name="Tech Corporation"
     def __init__(self,emp_id,name,salary):
         self.emp_id=emp_id
@@ -56,4 +56,44 @@ class Employee:
         print(f'Salary of employee {self.name} is {self.salary}')
 
 e1=Employee(1231,"John",25000)
-e1.display()
+e1.display()'''
+
+'''class Vehicle:
+    def __init__(self,brand,model):
+        self.brand=brand
+        self.model=model
+    def display(self):
+        print(f'Brand of vehicle is {self.brand}')
+        print(f'Model is {self.model}')
+
+class Car(Vehicle):
+    def __init__(self,brand,model, seating_capacity):
+        super().__init__(brand,model) #call parent class constructor
+        self.seating_capacity=seating_capacity
+    def disp_car(self):
+        print(f'Seating capacity {self.seating_capacity}')
+
+# Creating Vehicle and Car objects
+v1 = Vehicle("Toyota", "Corolla")
+v1.display()  # Display details of the Vehicle
+
+car1 = Car("Toyota", "Camry", 6)
+car1.display()  # Display details from the Vehicle class
+car1.disp_car()  # Display seating capacity from the Car class'''
+
+class Computer:
+    def __init__(self):
+        self.__maxPrice=900 #private variable
+
+    def sell(self):
+        print(f'Selling price: {self.__maxPrice}')
+    def setmaxprice(self,price):
+        self.__maxPrice=price
+#main program
+c=Computer()
+c.sell() #output selling price
+c.__maxPrice=1000 #attempt to change the price directly
+c.sell() #price does not change
+c.setmaxprice(1000) #change the price using setter method
+c.sell()
+
