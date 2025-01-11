@@ -123,7 +123,7 @@ r=Rectangle(23,3)
 calculate_area(c)
 calculate_area(r)'''
 
-#method overloading (same method name with different parameters
+'''#method overloading (same method name with different parameters
 class Calculator:
     def add(self, a, b):
         return a + b
@@ -159,5 +159,44 @@ cat = Cat()
 
 # Call the overridden methods
 dog.speak()  # Output: Dog is barking
-cat.speak()  # Output: Cat is meowing
+cat.speak()  # Output: Cat is meowing'''
 
+#exception handling
+try:
+    x = 10 / 0  # This will raise a ZeroDivisionError
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+print("==================================")
+try:
+    number = int(input("Enter a number: "))
+except ValueError:
+    print("That's not a valid number!")
+print("==================================")
+try:
+    x = int(input("Enter a number: "))
+    result = 10 / x
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+except ValueError:
+    print("That's not a valid number!")
+else:
+    print(f"The result is {result}")
+print("==================================")
+try:
+    # Some code that may raise exceptions
+    x = int(input("Enter a number: "))
+    y = 10 / x
+except (ValueError, ZeroDivisionError) as e:
+    print(f"Error occurred: {e}")
+
+print("==================================")
+
+try:
+    file = open("myfile.txt", "r")
+    data = file.read()
+except FileNotFoundError:
+    print("File not found!")
+finally:
+    if 'file' in locals():
+        file.close()
+    print("File has been closed.")
