@@ -98,7 +98,7 @@ c.sell() #price does not change
 c.setmaxprice(1000) #change the price using setter method
 c.sell()'''
 
-class Circle:
+'''class Circle:
     def __init__(self,radius):
         self.radius=radius
     def area(self):
@@ -121,5 +121,43 @@ r=Rectangle(23,3)
 
 #calculating areas
 calculate_area(c)
-calculate_area(r)
+calculate_area(r)'''
+
+#method overloading (same method name with different parameters
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+    def add_three(self, a, b, c):
+        return a + b + c
+
+# Create an instance of the Calculator class
+calc = Calculator()
+
+result1 = calc.add(5, 3) # Call method with two arguments (using the first method)
+print(f"Sum of two numbers: {result1}")
+
+result2 = calc.add_three(5, 3, 2) # Call method with three arguments (using the second method)
+print(f"Sum of three numbers: {result2}")
+
+#method overriding
+class Animal:
+    def speak(self):
+        print("Animal is making a sound")
+
+class Dog(Animal):
+    def speak(self):  # Method overriding
+        print("Dog is barking")
+
+class Cat(Animal):
+    def speak(self):  # Method overriding
+        print("Cat is meowing")
+
+# Create instances of subclasses
+dog = Dog()
+cat = Cat()
+
+# Call the overridden methods
+dog.speak()  # Output: Dog is barking
+cat.speak()  # Output: Cat is meowing
 
