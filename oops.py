@@ -1,5 +1,6 @@
+from multiprocessing.reduction import send_handle
 from tkinter.font import names
-
+from math import pi
 
 '''class human:
     pass
@@ -81,7 +82,7 @@ car1 = Car("Toyota", "Camry", 6)
 car1.display()  # Display details from the Vehicle class
 car1.disp_car()  # Display seating capacity from the Car class'''
 
-class Computer:
+'''class Computer:
     def __init__(self):
         self.__maxPrice=900 #private variable
 
@@ -95,5 +96,30 @@ c.sell() #output selling price
 c.__maxPrice=1000 #attempt to change the price directly
 c.sell() #price does not change
 c.setmaxprice(1000) #change the price using setter method
-c.sell()
+c.sell()'''
+
+class Circle:
+    def __init__(self,radius):
+        self.radius=radius
+    def area(self):
+        return pi*self.radius**2
+
+class Rectangle:
+    def __init__(self,length,width):
+        self.length=length
+        self.width=width
+    def area(self):
+        return self.length*self.width
+
+#function to calculate area of any shape
+def calculate_area(shape):
+    print('area: ',shape.area())
+
+#creating instance of different shapes
+c=Circle(5)
+r=Rectangle(23,3)
+
+#calculating areas
+calculate_area(c)
+calculate_area(r)
 
