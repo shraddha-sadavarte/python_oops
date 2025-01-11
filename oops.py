@@ -161,7 +161,7 @@ cat = Cat()
 dog.speak()  # Output: Dog is barking
 cat.speak()  # Output: Cat is meowing'''
 
-#exception handling
+'''#exception handling
 try:
     x = 10 / 0  # This will raise a ZeroDivisionError
 except ZeroDivisionError:
@@ -199,4 +199,33 @@ except FileNotFoundError:
 finally:
     if 'file' in locals():
         file.close()
-    print("File has been closed.")
+    print("File has been closed.")'''
+
+#FILE HANDLING
+file=open("example.txt","w")
+file.write("Hello world!")
+file.write("\nWelcome to file handling in python....")
+
+file=open("example.txt","r") #open file for reading
+'''content=file.read() #reads the entire file
+print(content)'''  #output:Hello world!
+#Welcome to file handling in python....
+
+'''print(file.readlines())''' #output:['Hello world!\n', 'Welcome to file handling in python....']
+
+'''print(file.readline(3))''' #ouput:'Hel'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
